@@ -1,0 +1,10 @@
+n = 200000 vehicles, worst-case search by registration number
+Object design    : 827 microseconds per search  -> O(n)
+Parallel arrays  : 785 microseconds per search  -> O(n)
+Found object at index  : true
+Found parallel at index: 199999
+
+Adding a new attribute 'ownerName':
+  Object design   : add ONE field to VehicleRecord (1 place changes)
+  Parallel arrays : new String[] ownerName + every insert/delete/swap/sort
+                    must now update 4 arrays in step (easy to go out of sync)
