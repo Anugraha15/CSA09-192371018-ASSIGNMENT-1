@@ -1,0 +1,6 @@
+Floors x Slots | scan (ns/op) | stack (ns/op)   [facility full except last slot]
+   1 x 20     |          165 |          379
+   3 x 50     |         1440 |          232
+   5 x 100    |          337 |          211
+  50 x 1000   |        13457 |          130
+ 100 x 2000   |        57963 |           68

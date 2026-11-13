@@ -1,0 +1,9 @@
+n        | array scan (ns) | ArrayList.indexOf (ns) | HashMap.get (ns)   [worst case: last element]
+1000     |            2092 |                    997 |               51
+10000    |           21359 |                   7855 |              369
+100000   |          745675 |                 128029 |               11
+
+Memory for n = 100000 parked vehicles (approx., measured after GC):
+  array      : 7090 KB
+  ArrayList  : 7431 KB
+  HashMap    : 11180 KB

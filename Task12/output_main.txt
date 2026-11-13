@@ -1,0 +1,7 @@
+Ticket#1001 EBike[TN10E1] slot(0,0) in=2026-11-11T09:00
+Ticket#1002 DeliveryVan[TN11V1] slot(0,1) in=2026-11-11T10:00
+Ticket#1003 Car[VIS1] slot(0,2) in=2026-11-11T10:30
+E-bike fee : Rs 20.0
+Van fee    : Rs 120.0
+Visitor car (one-day pass): Rs 0.0
+Total collection (incl. Rs 100 pass sale): Rs 240.0

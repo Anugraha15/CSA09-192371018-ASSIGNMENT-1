@@ -1,0 +1,13 @@
+Parked for 130 minutes, car rate Rs 30.0/hour
+Wrong (int division)    : Rs 60.0
+Wrong (late cast)       : Rs 60.0
+Wrong (fractional hours): Rs 65.0
+Correct (ceiling)       : Rs 90.0
+
+(int) 3000000000L = -1294967296  <- silent overflow
+Math.toIntExact detects it: integer overflow
+
+Jagged array lengths per floor: 
+  floor 0 -> 3 slots  [null, null, null]
+  floor 1 -> 5 slots  [null, null, null, null, TN01AB1234]
+  floor 2 -> 2 slots  [null, null]

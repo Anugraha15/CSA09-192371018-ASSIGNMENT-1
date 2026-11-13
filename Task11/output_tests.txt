@@ -1,0 +1,31 @@
+ID  | Test case                                     | Expected                                    | Actual                                      | Result
+------------------------------------------------------------------------------------------------------------------------------------------------------
+N1  | Two-wheeler 130 min                           | 30.0                                        | 30.0                                        | PASS
+N2  | Car 130 min                                   | 90.0                                        | 90.0                                        | PASS
+N3  | EV parking 130 min + 10 kWh charging          | 210.0                                       | 210.0                                       | PASS
+N4  | Slot allocation order floor0 slot0 then slot1 | [0, 0][0, 1]                                | [0, 0][0, 1]                                | PASS
+N5  | Ticket numbers strictly increasing            | true                                        | true                                        | PASS
+N6  | Monthly-pass holder parks free                | 0.0                                         | 0.0                                         | PASS
+N7  | Slot reused after exit                        | [0, 0]                                      | [0, 0]                                      | PASS
+B1  | Zero-minute stay is free                      | 0.0                                         | 0.0                                         | PASS
+B2  | Exactly 60 min = 1 hour                       | 30.0                                        | 30.0                                        | PASS
+B3  | 61 min = 2 started hours                      | 60.0                                        | 60.0                                        | PASS
+B4  | Exactly 480 min (8 h) = cap                   | 240.0                                       | 240.0                                       | PASS
+B5  | 600 min capped at 8 hours                     | 240.0                                       | 240.0                                       | PASS
+B6  | Exactly 1440 min (1 day) = 1 daily cap        | 240.0                                       | 240.0                                       | PASS
+B7  | 1441 min = 1 day + 1 hour                     | 270.0                                       | 270.0                                       | PASS
+B8  | Last free slot is allocated, then full        | [0, 1]null                                  | [0, 1]null                                  | PASS
+I1  | Unknown vehicle type 'TRUCK'                  | IllegalArgumentException: Unknown vehicle type: TRUCK| IllegalArgumentException: Unknown vehicle type: TRUCK| PASS
+I2  | Duplicate registration number                 | IllegalStateException: Duplicate registration: DUP1 is already parked| IllegalStateException: Duplicate registration: DUP1 is already parked| PASS
+I3  | Release invalid slot (floor 9)                | false                                       | false                                       | PASS
+I4  | Release slot twice                            | true false                                  | true false                                  | PASS
+I5  | Negative duration rejected                    | IllegalArgumentException: Duration cannot be negative: -5| IllegalArgumentException: Duration cannot be negative: -5| PASS
+I6  | Blank registration rejected                   | IllegalArgumentException: Registration number required| IllegalArgumentException: Registration number required| PASS
+I7  | Exit of vehicle that never entered            | IllegalArgumentException: No active ticket for GHOST| IllegalArgumentException: No active ticket for GHOST| PASS
+I8  | Entry when facility full                      | IllegalStateException: Parking full         | IllegalStateException: Parking full         | PASS
+------------------------------------------------------------------------------------------------------------------------------------------------------
+Day scenario  hand-calculated total = 30 + 60 + 180 + 0 + 240 = Rs 510.0
+Day scenario  program total         = Rs 510.0  (sum of returned fees = 510.0)
+Scenario check: PASS   active vehicles left = 0
+
+TOTAL: 24 passed, 0 failed

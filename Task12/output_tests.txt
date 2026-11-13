@@ -1,0 +1,36 @@
+ID  | Test case                                           | Expected                          | Actual                            | Result
+--------------------------------------------------------------------------------------------------------------------------------------------
+R1  | Two-wheeler 130 min (unchanged)                     | 30.0                              | 30.0                              | PASS
+R2  | Car 130 min (unchanged)                             | 90.0                              | 90.0                              | PASS
+R3  | EV 130 min + 10 kWh (unchanged)                     | 210.0                             | 210.0                             | PASS
+R4  | Car 600 min capped (unchanged)                      | 240.0                             | 240.0                             | PASS
+R5  | Old addMonthlyPass() still works                    | 0.0                               | 0.0                               | PASS
+R6  | Unknown type still rejected                         | IllegalArgumentException: Unknown vehicle type: TRUCK| IllegalArgumentException: Unknown vehicle type: TRUCK| PASS
+E1  | E-bike 30 min flat                                  | 20.0                              | 20.0                              | PASS
+E2  | E-bike 5 hours flat                                 | 20.0                              | 20.0                              | PASS
+E3  | E-bike 0 minutes still flat                         | 20.0                              | 20.0                              | PASS
+V1  | Van 10:00, 120 min (2 peak hours)                   | 120.0                             | 120.0                             | PASS
+V2  | Van 08:00, 120 min (1 off-peak + 1 peak)            | 90.0                              | 90.0                              | PASS
+V3  | Van 16:30, 90 min (starts peak, 2nd hour 17:30)     | 90.0                              | 90.0                              | PASS
+V4  | Van 17:00, 60 min (boundary, off-peak)              | 30.0                              | 30.0                              | PASS
+V5  | Van 09:00, 60 min (boundary, peak)                  | 60.0                              | 60.0                              | PASS
+V6  | Van 0 minutes                                       | 0.0                               | 0.0                               | PASS
+V7  | Van 11:00, 600 min capped at 8 h (6 peak + 2 off)   | 420.0                             | 420.0                             | PASS
+P1  | Visitor car with valid one-day pass                 | 0.0                               | 0.0                               | PASS
+P2  | One-day pass for a different day is ignored         | 60.0                              | 60.0                              | PASS
+P3  | Selling a one-day pass adds Rs 100 to collection    | 100.0                             | 100.0                             | PASS
+P4  | Expired monthly pass is charged                     | 30.0                              | 30.0                              | PASS
+P5  | EV with pass: parking free, charging still paid     | 120.0                             | 120.0                             | PASS
+F1  | Capacity of {20,30,40,50,60}                        | 200                               | 200                               | PASS
+F2  | 21st vehicle goes to floor 1 slot 0                 | [1, 0]                            | [1, 0]                            | PASS
+F3  | 200th vehicle gets last slot [4, 59]                | [4, 59]                           | [4, 59]                           | PASS
+F4  | 201st vehicle -> full (null)                        | null                              | null                              | PASS
+F5  | Slot 59 invalid on floor 0 (20 slots)               | false                             | false                             | PASS
+X1  | Unregistered type BUS rejected                      | IllegalArgumentException: Unknown vehicle type: BUS| IllegalArgumentException: Unknown vehicle type: BUS| PASS
+X2  | After register(), BUS 90 min = 2 h x 80             | 160.0                             | 160.0                             | PASS
+--------------------------------------------------------------------------------------------------------------------------------------------
+Day scenario hand-calculated: 100 (pass) + 20 + 120 + 90 + 0 + 180 + 60 = Rs 570.0
+Day scenario program total  : Rs 570.0
+Scenario check: PASS
+
+TOTAL: 29 passed, 0 failed

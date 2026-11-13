@@ -1,0 +1,18 @@
+-- static counter shared by all objects --
+[static block] Ticket class loaded, cap = 8.0 h
+Ticket numbers: 1, 2, 3   issued so far (static method) = 3
+
+-- two facilities, INSTANCE counter (bug) --
+north issues 1, south issues 1  <- duplicate ticket number 1!
+
+-- Fix 1: static counter + code --
+N-1 S-2 N-3
+
+-- Fix 2: per-facility counter + code --
+N-1 S-1 N-2
+
+-- object life cycle --
+Ticket collected after reference dropped? true
+
+-- pass by value of references --
+After reassign(k), k.ticketNo unchanged: true

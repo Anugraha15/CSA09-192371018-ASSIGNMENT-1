@@ -1,0 +1,11 @@
+Valid record: TN01AB1234 floor 1 slot 5, 130 min, charging bill Rs 120.0
+Rejected (negative duration): duration cannot be negative: -5
+Rejected (negative slot): invalid slot -1
+Rejected (negative kWh): kWh cannot be negative
+State after rejected updates is unchanged: duration=130, slot=5
+
+Wrapper-class pitfall:
+127 == 127   -> true   (cached small Integers)
+1000 == 1000 -> false  (different objects!)
+1000.equals(1000) -> true
+No charging, null kWh handled -> bill Rs 0.0

@@ -1,0 +1,7 @@
+Ticket#1001 TwoWheeler[TN01A1] slot(0,0) in=2026-11-11T09:00
+Ticket#1002 Car[TN02B2] slot(0,1) in=2026-11-11T09:05
+Ticket#1003 ElectricCar[TN03C3] slot(0,2) in=2026-11-11T09:10
+Exit TN01A1 fee: Rs 30.0
+Exit TN02B2 fee: Rs 60.0
+Exit TN03C3 fee: Rs 180.0 (incl. 10 kWh charging)
+Total collection: Rs 270.0, occupied slots: 0

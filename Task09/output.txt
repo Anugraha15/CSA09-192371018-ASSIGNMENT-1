@@ -1,0 +1,6 @@
+parking fee (130 min)     : 90.0
+charging fee (10 kWh)      : 120.0
+charging fee incl. 18% tax : 141.6   (default method)
+isValidKwh(500)            : false   (static interface method)
+amount due                 : 210.0
+Same object seen as Payable/Chargeable/Vehicle: true

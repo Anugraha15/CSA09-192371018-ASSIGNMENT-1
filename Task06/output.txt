@@ -1,0 +1,15 @@
+Creating new ElectricCar("TN09EV0001", 40):
+  1. Vehicle(TN09EV0001) constructor running
+  2. Car constructor running
+  3. ElectricCar constructor running
+
+Creating new Car("TN02B2"):
+  1. Vehicle(TN02B2) constructor running
+  2. Car constructor running
+
+Inherited members used by ev: regNo=TN09EV0001, fee(2h)=Rs 60.0, ElectricCar TN09EV0001
+
+Users:
+  Student Asha parks free with a pass? true
+  Staff Ravi parks free with a pass? true
+  Visitor Guest parks free with a pass? false

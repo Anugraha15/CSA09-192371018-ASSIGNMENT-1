@@ -1,0 +1,11 @@
+Overload (int)       : 90.0
+Overload (LocalTime) : 90.0
+
+Dispatch trace for: v.calculateFee(130)
+  declared type (compile time) : Vehicle
+  actual type   (run time)     : ElectricCar
+  calculateFee found in        : Vehicle (inherited, not overridden)
+  inside it, ratePerHour() runs: Car.ratePerHour() -> 30.0  (late binding)
+  result                       : 90.0
+
+instanceof alternative gives same answer: 90.0

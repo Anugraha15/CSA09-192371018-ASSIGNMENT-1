@@ -1,0 +1,12 @@
+TwoWheeler[A1] Rs10.0/h  ->  fee(130 min) = Rs 30.0
+Car[B2] Rs30.0/h  ->  fee(130 min) = Rs 90.0
+EBike[C3] Rs0.0/h  ->  fee(130 min) = Rs 20.0
+ElectricCar[D4] Rs30.0/h  ->  fee(130 min) = Rs 90.0
+
+equals/hashCode:
+HashSet size after adding two vehicles with same regNo = 1
+Car(TN02B2).equals(ElectricCar(TN02B2)) = true
+
+Switch alternative: 
+90.0
+New type 'VAN' fails at RUNTIME: Unknown type VAN
